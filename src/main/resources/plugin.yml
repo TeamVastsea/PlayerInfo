@@ -1,0 +1,6 @@
+name: PlayerInfoExpansion
+version: 1.0.0
+main: cc.vastsea.playerinfo.papi.PlayerInfoExpansion
+api-version: 1.13
+author: Snowball_233
+depend: [PlaceholderAPI, ViaVersion, floodgate]
