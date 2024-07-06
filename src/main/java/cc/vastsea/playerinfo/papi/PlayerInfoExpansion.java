@@ -10,13 +10,13 @@ import org.geysermc.floodgate.api.player.FloodgatePlayer;
 
 /**
  * PlaceholderAPI expansion for PlayerInfo.
- * @version 1.1
+ * @version 1.0.0
  * @author Snowball_233
  * @see PlaceholderExpansion
  */
 public class PlayerInfoExpansion extends PlaceholderExpansion {
 
-    private static final String VERSION = "1.1";
+    private static final String VERSION = "1.0.0";
 
     @Override
     public boolean persist() {
@@ -36,7 +36,7 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
 
     @Override
     public String getIdentifier() {
-        return "playerinfo";
+        return "player";
     }
 
     @Override
@@ -50,25 +50,14 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
             return "";
         }
 
-        switch (identifier.toLowerCase()) {
-            case "player_info":
-                String version = getPlayerVersion(player);
-                String platform = getPlayerPlatformString(player);
-                String device = getPlayerDeviceString(player);
-                return String.format("[%s][%s][%s]", version, platform, device);
-
-            case "player_version":
-                return getPlayerVersion(player);
-
-            case "player_platform":
-                return getPlayerPlatformString(player);
-
-            case "player_device":
-                return getPlayerDeviceString(player);
-
-            default:
-                return null;
+        if (identifier.equalsIgnoreCase("info")) {
+            String version = getPlayerVersion(player);
+            String platform = getPlayerPlatformString(player);
+            String device = getPlayerDeviceString(player);
+            return String.format("[%s][%s][%s]", version, platform, device);
         }
+
+        return null;
     }
 
     private String getPlayerVersion(Player player) {
