@@ -8,6 +8,12 @@ import org.bukkit.entity.Player;
 import org.geysermc.floodgate.api.FloodgateApi;
 import org.geysermc.floodgate.api.player.FloodgatePlayer;
 
+/**
+ * PlaceholderAPI expansion for PlayerInfo.
+ * @version 1.0.0
+ * @author Snowball_233
+ * @see PlaceholderExpansion
+ */
 public class PlayerInfoExpansion extends PlaceholderExpansion {
 
     private static final String VERSION = "1.0.0";
@@ -54,12 +60,22 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
         return null;
     }
 
+    /**
+     * @author Snowball_233
+     * @param player
+     * @return player version string
+     */
     private String getPlayerVersion(Player player) {
         int protocolId = Via.getAPI().getPlayerVersion(player.getUniqueId());
         ProtocolVersion protocolVersion = ProtocolVersion.getProtocol(protocolId);
         return protocolVersion.getName();
     }
 
+    /**
+     * @author Snowball_233
+     * @param player
+     * @return platform string
+     */
     private String getPlayerPlatformString(Player player) {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         if (floodgatePlayer != null) {
@@ -87,6 +103,11 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
         }
     }
 
+    /**
+     * @author Snowball_233
+     * @param player
+     * @return device string
+     */
     private String getPlayerDeviceString(Player player) {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         if (floodgatePlayer != null) {
