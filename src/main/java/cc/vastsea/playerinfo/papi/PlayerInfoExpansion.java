@@ -36,7 +36,7 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
 
     @Override
     public String getIdentifier() {
-        return "playerinfo";
+        return "player";
     }
 
     @Override
@@ -50,7 +50,7 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
             return "";
         }
 
-        if (identifier.equalsIgnoreCase("player_info")) {
+        if (identifier.equalsIgnoreCase("info")) {
             String version = getPlayerVersion(player);
             String platform = getPlayerPlatformString(player);
             String device = getPlayerDeviceString(player);
@@ -60,22 +60,12 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
         return null;
     }
 
-    /**
-     * @author Snowball_233
-     * @param player
-     * @return player version string
-     */
     private String getPlayerVersion(Player player) {
         int protocolId = Via.getAPI().getPlayerVersion(player.getUniqueId());
         ProtocolVersion protocolVersion = ProtocolVersion.getProtocol(protocolId);
         return protocolVersion.getName();
     }
 
-    /**
-     * @author Snowball_233
-     * @param player
-     * @return platform string
-     */
     private String getPlayerPlatformString(Player player) {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         if (floodgatePlayer != null) {
@@ -103,11 +93,6 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
         }
     }
 
-    /**
-     * @author Snowball_233
-     * @param player
-     * @return device string
-     */
     private String getPlayerDeviceString(Player player) {
         FloodgatePlayer floodgatePlayer = FloodgateApi.getInstance().getPlayer(player.getUniqueId());
         if (floodgatePlayer != null) {
