@@ -36,7 +36,7 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
 
     @Override
     public String getIdentifier() {
-        return "player";
+        return "playerinfo";
     }
 
     @Override
@@ -55,20 +55,17 @@ public class PlayerInfoExpansion extends PlaceholderExpansion {
         String device = getPlayerDeviceString(player);
 
         switch (identifier.toLowerCase()) {
-            case "info":
-                return String.format("[%s][%s][%s]", version, platform, device);
-
             case "version":
-                return version;
+                return String.format("[%s]", version);
 
             case "platform":
-                return platform;
+                return String.format("[%s]", platform);
 
             case "device":
-                return device;
+                return String.format("[%s]", device);
 
             default:
-                return "Syntax Error";
+                return String.format("[%s][%s][%s]", version, platform, device);
         }
     }
 
