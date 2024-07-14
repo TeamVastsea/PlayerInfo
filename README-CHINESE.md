@@ -32,10 +32,10 @@ PlayerInfoExpansion 是一个 PlaceholderAPI 扩展，用于显示玩家的设�
 %player_info%：显示玩家的版本、平台和设备信息。
 例如：
 
-- 玩家信息: %player_info%
-- 玩家版本: %player_version%
-- 玩家平台: %player_platform%
-- 玩家设备: %player_device%
+- 玩家信息: %playerinfo%
+- 玩家版本: %playerinfo_version%
+- 玩家平台: %playerinfo_platform%
+- 玩家设备: %playerinfo_device%
 
 当玩家执行命令或触发事件时，该占位符将被替换为具体的玩家信息，例如 [1.16.5][Computer][Win32]。
 

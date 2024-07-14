@@ -1,5 +1,5 @@
 name: PlayerInfoExpansion
-version: 1.0.0
+version: 1.2
 main: cc.vastsea.playerinfo.papi.PlayerInfoExpansion
 api-version: 1.13
 author: Snowball_233

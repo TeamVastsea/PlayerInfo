@@ -29,13 +29,13 @@ Place the playerinfo-expansion.jar file into the server's ./plugins/PlaceholderA
 
 ## Usage
 
-%player_info%: Displays the player's version, platform, and device information.
+%playerinfo%: Displays the player's version, platform, and device information.
 For example:
 
-- Player info: %player_info%
-- Player version: %player_version%
-- Player platform: %player_platform%
-- PLayer device: %player_device%
+- Player info: %playerinfo%
+- Player version: %playerinfo_version%
+- Player platform: %playerinfo_platform%
+- PLayer device: %playerinfo_device%
 
 When the player executes a command or triggers an event, this placeholder will be replaced with the specific player information, such as [1.16.5][Computer][Win32].
 
